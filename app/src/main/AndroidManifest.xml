@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ryudigitalprinting">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".EditProfile"
+            android:theme="@style/LoginNoTittleBar"></activity>
+        <activity
+            android:name=".CetakMMT.CetakUndanganPernikahan"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".CetakMMT.CetakPamflet"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".CetakMMT.CetakKartuNama"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".CetakMMT.OrderSukses"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".CetakMMT.CetakMMT"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".ListCetak.ListCetak"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".LoginRegister.RegisterUser"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".LoginRegister.LoginUser"
+            android:theme="@style/LoginNoTittleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
