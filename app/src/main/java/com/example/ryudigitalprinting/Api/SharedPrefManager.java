@@ -3,63 +3,47 @@ package com.example.ryudigitalprinting.Api;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
-
 public class SharedPrefManager {
 
-    private static final String SHARED_PREF_NAME = "my_shared_preff";
+    public static final String SP_MAHASISWA_APP = "spMahasiswaApp";
 
-    private static SharedPrefManager mInstance;
-    private Context mCtx;
+    public static final String NAMA = "namalengkap";
+    public static final String EMAIL = "email";
 
-    private SharedPrefManager(Context mCtx) {
-        this.mCtx = mCtx;
+    public static final String SP_SUDAH_LOGIN = "spSudahLogin";
+
+    SharedPreferences sp;
+    SharedPreferences.Editor spEditor;
+
+    public SharedPrefManager(Context context){
+        sp = context.getSharedPreferences(SP_MAHASISWA_APP, Context.MODE_PRIVATE);
+        spEditor = sp.edit();
     }
 
-
-    public static synchronized SharedPrefManager getInstance(Context mCtx) {
-        if (mInstance == null) {
-            mInstance = new SharedPrefManager(mCtx);
-        }
-        return mInstance;
+    public void saveSPString(String keySP, String value){
+        spEditor.putString(keySP, value);
+        spEditor.commit();
     }
 
-
-    public void saveUser(User user) {
-
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        editor.putInt("id", user.getId());
-        editor.putString("namalengkap", user.getNamalengkap());
-        editor.putString("email", user.getEmail());
-        editor.putString("nomortelepon", user.getNomortelepon());
-        editor.putString("password", user.getPassword());
-
-        editor.apply();
-
+    public void saveSPInt(String keySP, int value){
+        spEditor.putInt(keySP, value);
+        spEditor.commit();
     }
 
-    public boolean isLoggedIn() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getInt("id", -1) != -1;
+    public void saveSPBoolean(String keySP, boolean value){
+        spEditor.putBoolean(keySP, value);
+        spEditor.commit();
     }
 
-    public User getUser() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return new User(
-                sharedPreferences.getInt("id", -1),
-                sharedPreferences.getString("namalengkap", null),
-                sharedPreferences.getString("nomortelepon", null),
-                sharedPreferences.getString("password", null)
-        );
+    public String getSPNama(){
+        return sp.getString(NAMA, "");
     }
 
-    public void clear() {
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
+    public String getSPEmail(){
+        return sp.getString(EMAIL, "");
     }
 
+    public Boolean getSPSudahLogin(){
+        return sp.getBoolean(SP_SUDAH_LOGIN, false);
+    }
 }

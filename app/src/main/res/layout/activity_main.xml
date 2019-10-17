@@ -285,6 +285,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:focusable="true"
+        app:cardBackgroundColor="@color/colorkuning"
         app:cardCornerRadius="13dp"
         app:cardElevation="8dp">
 

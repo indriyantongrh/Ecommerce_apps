@@ -9,22 +9,32 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.util.Patterns;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.example.ryudigitalprinting.Api.RequestInterface;
 import com.example.ryudigitalprinting.Api.SharedPrefManager;
 import com.example.ryudigitalprinting.Api.SuccessMessage;
 import com.example.ryudigitalprinting.BuildConfig;
 import com.example.ryudigitalprinting.MainActivity;
 import com.example.ryudigitalprinting.R;
+import com.example.ryudigitalprinting.Utility.AppController;
 import com.google.gson.Gson;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -36,6 +46,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginUser extends AppCompatActivity {
 
+
+    int success;
+    ConnectivityManager conMgr;
+
+
+    private String url = BuildConfig.BASE_URL+"login.php";
+
+    private static final String TAG = LoginUser.class.getSimpleName();
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_MESSAGE = "message";
+
+
+    SharedPrefManager sharedPrefManager;
     CardView btnlogin;
     TextView btndaftar;
     EditText txtemail, txtpassword;
@@ -66,6 +89,17 @@ public class LoginUser extends AppCompatActivity {
         txtemail = findViewById(R.id.txtemail);
         txtpassword = findViewById(R.id.txtpassword);
 
+
+        SharedPrefManager sharedPrefManager;
+        sharedPrefManager = new SharedPrefManager(this);
+
+
+        if (sharedPrefManager.getSPSudahLogin()){
+            startActivity(new Intent(LoginUser.this, MainActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
+
         // Cek session login jika TRUE maka langsung buka MainActivity
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
@@ -92,8 +126,9 @@ public class LoginUser extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ////pDialog = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
-                TambahUser();
+               ///// pDialog = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
+                ///TambahUser();
+                checkLogin();
             }
         });
 
@@ -110,7 +145,7 @@ public class LoginUser extends AppCompatActivity {
 
     }
 
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -120,7 +155,7 @@ public class LoginUser extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
-    }
+    }*/
 
 
     public void TambahUser() {
@@ -132,6 +167,7 @@ public class LoginUser extends AppCompatActivity {
 
         //mengambil data dari edittext
         ///String namalengkap = txtnamalengkap.getText().toString();
+        String nomortelepon = txtemail.getText().toString();
         String email = txtemail.getText().toString();
         ////String nomortelepon = txtnomortelepon.getText().toString();
         String password = txtpassword.getText().toString();
@@ -144,7 +180,7 @@ public class LoginUser extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(new Gson())).build();
 
         RequestInterface api = retrofit.create(RequestInterface.class);
-        Call<SuccessMessage> call = api.loginuser( email,  password);
+        Call<SuccessMessage> call = api.loginuser( id,nomortelepon,email,  password);
         call.enqueue(new Callback<SuccessMessage>() {
             @Override
             public void onResponse(Call<SuccessMessage> call, Response<SuccessMessage> response) {
@@ -153,8 +189,8 @@ public class LoginUser extends AppCompatActivity {
                 pDialog.dismiss();
                 if (success.equals("1")) {
 
-
                     // menyimpan login ke session
+                    sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putBoolean(session_status, true);
                     editor.putString(TAG_ID, id);
@@ -163,11 +199,20 @@ public class LoginUser extends AppCompatActivity {
                     editor.putString(TAG_TOKEN, value_token);
 
                     editor.apply();
+
+
                     Toast.makeText(LoginUser.this, message, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginUser.this, MainActivity.class);
                     intent.putExtra("id",id);
                     startActivity(intent);
                     finish();
+
+
+
+
+
+
+
                 } else {
                     Toast.makeText(LoginUser.this, message, Toast.LENGTH_SHORT).show();
                 }
@@ -181,6 +226,99 @@ public class LoginUser extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    private void checkLogin() {
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+        pDialog.setMessage("Logging in ...");
+        pDialog.show();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.e(TAG, "Login Response: " + response.toString());
+                pDialog.hide();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    success = jObj.getInt(TAG_SUCCESS);
+
+                    // Check for error node in json
+                    if (success == 1) {
+                        id = jObj.getString(TAG_ID);
+                        value_nama_lengkap = jObj.getString(TAG_NAMA_LENGKAP);
+                        // value_token = jObj.getString(TAG_TOKEN);
+                        id = jObj.getString(TAG_ID);
+
+                        Log.e("Successfully Login!", jObj.toString());
+
+                        Toast.makeText(getApplicationContext(), jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+
+                        // menyimpan login ke session
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putBoolean(session_status, true);
+                        editor.putString(TAG_ID, id);
+                        editor.putString(TAG_NAMA_LENGKAP, value_nama_lengkap);
+                        editor.putString(TAG_NOMORHP, value_nomorhp);
+                        editor.putString(TAG_TOKEN, value_token);
+
+
+
+
+                        editor.apply();
+
+                        // Memanggil main activity
+                        Intent intent = new Intent(LoginUser.this, MainActivity.class);
+                        intent.putExtra(TAG_ID, id);
+                        intent.putExtra(TAG_NAMA_LENGKAP, value_nama_lengkap);
+                        intent.putExtra(TAG_NOMORHP, value_nomorhp);
+                        intent.putExtra(TAG_TOKEN, value_token);
+
+                        finish();
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                }
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+
+                pDialog.hide();
+
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", txtemail.getText().toString());
+                /// params.put("username", txtusername.getText().toString());
+                ////params.put("nomor_hp", txtusername.getText().toString());
+                params.put("password", txtpassword.getText().toString());
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
     }
 
     @Override

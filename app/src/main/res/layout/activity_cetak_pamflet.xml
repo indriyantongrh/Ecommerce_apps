@@ -123,7 +123,7 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/txttanggalbooking"
+                        android:id="@+id/txttanggalpesan"
                         android:layout_width="2dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -134,6 +134,23 @@
                         android:focusableInTouchMode="false"
                         android:hint="Tanggal Pesan"
                         />
+
+                </LinearLayout>
+
+                <!--Spinner Uang Muka-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="250dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/borderhitam"
+                    android:layout_height="37dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerukurankertas"
+                        android:layout_width="match_parent"
+                        android:spinnerMode="dropdown"
+                        android:layout_height="match_parent"></Spinner>
 
                 </LinearLayout>
 
@@ -148,8 +165,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
-                        android:hint="Lebar MMT (satuan Centimeter)"
-                        android:inputType="numberDecimal"
+                        android:hint="Lebar  (satuan Centimeter)"
+                        android:inputType="none"
+                        android:editable="false"
                         android:singleLine="true"
                         android:text="" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -165,8 +183,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
-                        android:hint="Panjang MMT (satuan Centimeter)"
-                        android:inputType="numberDecimal"
+                        android:hint="Panjang  (satuan Centimeter)"
+                        android:inputType="none"
+                        android:editable="false"
                         android:singleLine="true"
                         android:text="" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -182,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
-                        android:hint="Jumlah Pesanan"
+                        android:hint="Jumlah Lembar"
                         android:inputType="number"
                         android:singleLine="true"
                         android:text="" />
@@ -216,11 +235,22 @@
                             android:text="Cek harga"/>
                     </androidx.cardview.widget.CardView>
 
-
+                    <TextView
+                        android:id="@+id/txthargakertas"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:paddingLeft="18dp"
+                        android:text="Rp. 0"
+                        android:textColor="#000"
+                        android:visibility="gone"
+                        android:textStyle="italic|bold"
+                        android:textSize="24sp"/>
 
 
                     <TextView
-                        android:id="@+id/txthargammt"
+                        android:id="@+id/txthargapamflet"
                         android:layout_width="230dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -236,8 +266,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="italic"
+                    android:gravity="center"
                     android:textColor="#000"
-                    android:text="Harga Rp.17.000/meter"/>
+                    android:text="Harga ukurna kertas A4 Rp.1.100/lembar dan ukuran kertas A3 Rp. 1.600/lembar"/>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnuploadgambar"
@@ -276,7 +307,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnpesanmmt"
+            android:id="@+id/btnpesanpamflet"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="249dp"
             android:layout_height="wrap_content"

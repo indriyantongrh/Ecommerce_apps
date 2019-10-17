@@ -83,7 +83,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/datauser"
                     android:layout_width="0dp"
-                    android:layout_height="190dp"
+                    android:layout_height="330dp"
                     android:layout_columnWeight="0.5"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
@@ -116,7 +116,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:layout_below="@+id/detailharga"
-                            android:text="No Pesanan :"
+                            android:text="No Pesanan : "
                             android:textStyle="bold"
                             android:textColor="#000"
                             android:textSize="18sp"/>
@@ -133,7 +133,7 @@
                             android:layout_marginBottom="5dp"
                             android:textSize="18sp"
                             android:textColor="#000"
-                            android:text="  INV083434044"
+                            android:text=" Nomor Invoice"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -184,6 +184,7 @@
                             android:textSize="30sp"/>
 
                         <TextView
+                            android:id="@+id/text9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="#000"
@@ -192,11 +193,75 @@
                             android:layout_below="@+id/txt_totalharga"
                             android:text="Jika sudah konfirmasi pembayaran, lihat Status Order secara berkala."/>
 
+
+
+                        <TextView
+                            android:id="@+id/text900"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:paddingTop="20dp"
+                            android:textColor="@android:color/holo_blue_dark"
+                            android:layout_below="@+id/text9"
+                            android:text="Transfer ke nomor rekening dibawah :"/>
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/relativ1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/text900"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imagebankbari"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/banjbri" />
+
+                            <TextView
+                                android:id="@+id/annama"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/imagebankbari"
+                                android:layout_toRightOf="@+id/imagebankbari"
+                                android:text="A/N CV. RYU PERCETAKAN"
+                                android:textAlignment="center"
+                                android:paddingTop="15dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/nomorrekeningbri"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/annama"
+                                android:layout_toEndOf="@+id/imagebankbari"
+                                android:layout_toRightOf="@+id/imagebankbari"
+                                android:text="146601003158508"
+                                android:textIsSelectable="true"
+                                android:textAlignment="center"
+                                android:paddingTop="5dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
                     </RelativeLayout>
+
+
+
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- Column 2 -->
+ <!--               &lt;!&ndash; Column 2 &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/DetailPembayaran"
                     android:layout_width="0dp"
@@ -231,7 +296,7 @@
                             android:layout_height="wrap_content"
                             android:layout_toEndOf="@+id/imagebankbari"
                             android:layout_toRightOf="@+id/imagebankbari"
-                            android:text="A/N INDRIYANTO NUGROHO"
+                            android:text="A/N CV. RYU PERCETAKAN"
                             android:textAlignment="center"
                             android:paddingTop="15dp"
                             android:textColor="@android:color/black"
@@ -253,48 +318,13 @@
                             android:textStyle="bold" />
 
 
-                        <ImageView
-                            android:id="@+id/imagebankjenius"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_below="@+id/imagebankbari"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/bankjenius2" />
 
-                        <TextView
-                            android:id="@+id/annamabankjenius"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/nomorrekeningbri"
-                            android:layout_toEndOf="@+id/imagebankjenius"
-                            android:layout_toRightOf="@+id/imagebankjenius"
-                            android:text="A/N INDRIYANTO NUGROHO"
-                            android:textAlignment="center"
-                            android:paddingTop="29dp"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
-                            android:id="@+id/nomorrekeningjenius"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/annamabankjenius"
-                            android:layout_toEndOf="@+id/imagebankjenius"
-                            android:layout_toRightOf="@+id/imagebankjenius"
-                            android:text="90011618200"
-                            android:textIsSelectable="true"
-                            android:textAlignment="center"
-                            android:paddingTop="5dp"
-                            android:textColor="@android:color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
 
 
 
                     </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
             </GridLayout>
 
@@ -302,7 +332,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnkembaliberanda"
                 android:layout_width="285dp"
-                android:layout_height="35dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
                 android:layout_centerHorizontal="true"
@@ -312,14 +342,14 @@
                 android:text="Kembali Beranda"
                 android:textSize="13dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardBackgroundColor="@color/colorkuning"
                 android:textStyle="bold" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textSize="20dp"
                     android:text="Menu Utama"/>
             </androidx.cardview.widget.CardView>

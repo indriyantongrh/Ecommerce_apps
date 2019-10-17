@@ -29,15 +29,32 @@ public interface RequestInterface {
 
     @FormUrlEncoded
     @POST("login.php")
-    Call<SuccessMessage> loginuser(@Field("email") String email,
+    Call<SuccessMessage> loginuser(@Field("id") String id,
+                                   @Field("email") String email,
+                                   @Field("nomortelepon") String nomortelepon,
                                     @Field("password") String password);
+
+
+    //detail profil
+    @GET("detailuser.php")
+    Call<JSONResponse> getProfilUser(@Query("id") String id);
+
+
+
+    //detail transaksi
+    @GET("detailtransaksi.php")
+    Call<JSONResponse> getTransaksi(@Query("id") String id);
+
+    @GET("liststatuspesanan.php")
+    Call<JSONResponse> getStatuspesanan(@Query("id") String id);
+
+
+
 
 
     /*Batas API*/
 
-    //detail profil
-    @GET("detail_profil.php")
-    Call<JSONResponse> getProfilUser(@Query("id_user") String id_user);
+
 
     //jml iklan dari profil
     @GET("jumlah_iklan_akun.php")

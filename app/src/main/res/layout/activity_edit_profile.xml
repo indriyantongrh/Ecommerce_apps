@@ -92,8 +92,28 @@
                                 android:ems="10"
                                 android:hint="Nama Lengkap"
                                 android:singleLine="true"
-                                android:inputType="none"
-                                android:editable="false"
+                                android:inputType="text"
+
+                                android:text="" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_layout_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/txtemail"
+                                android:layout_width="280dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:ems="10"
+                                android:hint="Email"
+                                android:inputType="textEmailAddress"
+
+                                android:singleLine="true"
+
                                 android:text="" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,31 +129,14 @@
                                 android:layout_gravity="center_horizontal"
                                 android:ems="10"
                                 android:hint="Nomor Telepon"
-                                android:inputType="none"
-                                android:editable="false"
+                                android:inputType="text"
+
                                 android:singleLine="true"
 
                                 android:text="" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/text_input_layout_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
 
-                            <EditText
-                                android:id="@+id/txtemail"
-                                android:layout_width="280dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:ems="10"
-                                android:hint="Email"
-                                android:inputType="none"
-                                android:editable="false"
-                                android:singleLine="true"
-
-                                android:text="" />
-                        </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/text_input_layout_PASSWORD"
@@ -147,8 +150,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:ems="10"
                                 android:hint="Password"
-                                android:inputType="none"
-                                android:editable="false"
+                                android:inputType="textPassword"
                                 android:singleLine="true"
 
                                 android:text="" />
