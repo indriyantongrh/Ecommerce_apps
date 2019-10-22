@@ -49,7 +49,16 @@ public interface RequestInterface {
     Call<JSONResponse> getStatuspesanan(@Query("id") String id);
 
 
-
+    @FormUrlEncoded
+    @POST("ceknomorinvoice.php")
+    Call<SuccessMessage> getkonfirmasipembayaran(@Field("id_transfer") String id_transfer,
+                                                 @Field("id") String id,
+                                                 @Field("namalengkap") String namalengkap,
+                                                 @Field("nomortelepon") String nomortelepon,
+                                                 @Field("id_transaksi") String id_transaksi,
+                                                 @Field("nomor_invoice") String nomor_invoice,
+                                                 @Field("nama_bank") String nama_bank,
+                                                 @Field("jumlah_bayar") String jumlah_bayar);
 
 
     /*Batas API*/
@@ -173,5 +182,6 @@ public interface RequestInterface {
     @POST("input_klik_pcb.php")
     Call<SuccessMessage> insert_klik_pcb(@Field("id_user") String id_user,
                                          @Field("id_iklan") String id_iklan);
+
 
 }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,6 +42,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class OrderSukses extends AppCompatActivity {
+
+    private ClipboardManager myClipboard;
+    private ClipData myClip;
 
     private static final String url_ambil_id_transaksi = "http://universedeveloper.com/gudangandroid/percetakan/cektransaksiterakhir.php";
     public static final String BASE_URL = "http://universedeveloper.com/gudangandroid/percetakan/";
@@ -79,6 +84,22 @@ public class OrderSukses extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 getApplicationContext().startActivity(intent);
+            }
+        });
+
+
+        ////Copied in clipnoard
+        txt_nomorinvoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                String text;
+                text = txt_nomorinvoice.getText().toString();
+
+                myClip = ClipData.newPlainText("text", text);
+                myClipboard.setPrimaryClip(myClip);
+
+                Toast.makeText(getApplicationContext(), "Nomor Invoice di Copy",Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -12,6 +12,17 @@ public class ModelStatusPesanan {
     @SerializedName("id") //ini yg ada di json
     private String id;
 
+    public String getNamalengkap() {
+        return namalengkap;
+    }
+
+    public void setNamalengkap(String namalengkap) {
+        this.namalengkap = namalengkap;
+    }
+
+    @SerializedName("namalengkap") //ini yg ada di json
+    private String namalengkap;
+
 
     @SerializedName("jenis_cetak") //ini yg ada di json
     private String jenis_cetak;

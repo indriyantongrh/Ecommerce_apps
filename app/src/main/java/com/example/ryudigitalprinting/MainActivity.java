@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ryudigitalprinting.Api.JSONResponse;
+import com.example.ryudigitalprinting.KonfirmasiPesana.KonfirmasiPembayaran;
+import com.example.ryudigitalprinting.KonfirmasiPesana.KonfirmasiPesanan;
 import com.example.ryudigitalprinting.Model.ModelProfilUser;
 import com.example.ryudigitalprinting.Api.RequestInterface;
 import com.example.ryudigitalprinting.ListCetak.ListCetak;
@@ -39,7 +41,7 @@ import static com.example.ryudigitalprinting.LoginRegister.LoginUser.TAG_TOKEN;
 public class MainActivity extends AppCompatActivity {
 
     TextView txtnama;
-    CardView btnkonfirmasipembararan, btncetak, btnkontakcs, btnstatusorder, btneditprofile, btnlogout;
+    CardView btnkonfirmasi, btncetak, btnkontakcs, btnstatusorder, btneditprofile, btnlogout;
     String id;
     SharedPreferences sharedpreferences;
 
@@ -85,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StatusOrder.class);
+                startActivity(intent);
+            }
+        });
+
+        btnkonfirmasi = findViewById(R.id.btnkonfirmasi);
+        btnkonfirmasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, KonfirmasiPembayaran.class);
                 startActivity(intent);
             }
         });

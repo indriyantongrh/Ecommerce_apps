@@ -230,7 +230,7 @@
 
         <!-- Column 2 -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnkonfirmasipembararan"
+            android:id="@+id/btnkonfirmasi"
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:layout_columnWeight="0.5"

@@ -12,7 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StatusOrder.DetailStatusPesanan"></activity>
+        <activity android:name=".KonfirmasiPesana.DetailKonfirmasi"
+            android:theme="@style/LoginNoTittleBar"></activity>
+        <activity android:name=".KonfirmasiPesana.KonfirmasiPembayaran"
+            android:theme="@style/LoginNoTittleBar"/>
+        <activity
+            android:name=".KonfirmasiPesana.KonfirmasiPesanan"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".StatusOrder.DetailStatusPesanan"
+            android:theme="@style/LoginNoTittleBar" />
         <activity
             android:name=".StatusOrder.StatusOrder"
             android:theme="@style/LoginNoTittleBar" />
