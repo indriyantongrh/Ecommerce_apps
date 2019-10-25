@@ -283,7 +283,12 @@
                                 android:inputType="number"
                                 android:singleLine="true"
                                 android:text="" />
+
+
+
                         </com.google.android.material.textfield.TextInputLayout>
+
+
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/btnuploadgambar"
@@ -319,7 +324,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
-
+                        <me.abhinay.input.CurrencyEditText
+                            android:id="@+id/etInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Type value"
+                            android:layout_below="@+id/image"
+                            android:inputType="number"
+                            android:textSize="24sp" />
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.icu.text.IDNA;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -36,15 +37,18 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
+import me.abhinay.input.CurrencyEditText;
 
 
 public class DetailKonfirmasi extends AppCompatActivity {
 
     TextView  tvnomorinvoice,txt_namalengkap, txt_jeniscetak,txt_lebar, txt_panjang,txt_jumlahcetak, txt_totalbayar;
-    String id, id_transaksi,namalengkap,nomor_invoice,jenis_cetak,lebar,panjang,jumlah_pesanan,jumlah_harga;
+    String id, id_transaksi,namalengkap,nomor_invoice,jenis_cetak,lebar,panjang,jumlah_pesanan,jumlah_harga, jumlah_bayar;
 
     CardView btncekharga, btnuploadgambar, btnkonfirmasi;
     ImageView image;
@@ -64,6 +68,8 @@ public class DetailKonfirmasi extends AppCompatActivity {
     private static final String TAG_MESSAGE = "message";
     String tag_json_obj = "json_obj_req";
 
+    CurrencyEditText etInput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,17 +81,14 @@ public class DetailKonfirmasi extends AppCompatActivity {
         txt_lebar = findViewById(R.id.txt_lebar);
         txt_panjang = findViewById(R.id.txt_panjang);
         txt_jumlahcetak = findViewById(R.id.txt_jumlahcetak);
-
+        txt_totalbayar = findViewById(R.id.txt_totalbayar);
         image= findViewById(R.id.image);
 
         txtnamabank = findViewById(R.id.txtnamabank);
         txtjumlahtf = findViewById(R.id.txtjumlahtf);
 
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        txt_totalbayar = findViewById(R.id.txt_totalbayar);
-     ///   txt_totalbayar.setText(formatRupiah.format((double)txt_totalbayar));
-
+      //  Locale localeID = new Locale("in", "ID");
+       // NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
 
 
@@ -258,10 +261,17 @@ public class DetailKonfirmasi extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
+
+                  Locale localeID = new Locale("in", "ID");
+                  NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
+                 /// txtjumlahtf.setText(formatRupiah.format(jumlahbayar));
+
                 params.put("id_transaksi", id_transaksi);
                 params.put("status_pesanan", "Menunggu Konfirmasi");
                 params.put("nama_bank", txtnamabank.getText().toString());
-                params.put("jumlah_bayar", txtjumlahtf.getText().toString());
+                double jumlahbayar = Double.parseDouble(txtjumlahtf.getText().toString());
+                params.put("jumlah_bayar", formatRupiah.format(jumlahbayar));
                 params.put("bukti_transfer", getStringImage(decoded));
                 params.put("status_transfer", "Menunggu Konfirmasi");
 

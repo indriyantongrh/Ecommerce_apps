@@ -43,9 +43,19 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+
+        <ImageView
+            android:id="@+id/image12"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="4dp"
+            android:src="@drawable/logoprinting"
+            android:layout_marginBottom="0dp" />
+
         <androidx.cardview.widget.CardView
-            android:paddingTop="20dp"
-            android:layout_marginTop="100dp"
+            android:paddingTop="0dp"
+            android:layout_marginTop="1dp"
             android:layout_gravity="center"
             android:layout_width="fill_parent"
             app:cardCornerRadius="15dp"

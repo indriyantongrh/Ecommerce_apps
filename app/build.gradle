@@ -55,4 +55,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'me.relex:circleindicator:1.2.2@aar'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //editeextcurrency
+    implementation 'me.abhinay.input:currency-edittext:1.1'
 }
