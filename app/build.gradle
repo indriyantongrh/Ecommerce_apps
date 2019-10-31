@@ -58,4 +58,7 @@ dependencies {
 
     //editeextcurrency
     implementation 'me.abhinay.input:currency-edittext:1.1'
+
+    // Facebook shimmer effect dependency
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 }
