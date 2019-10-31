@@ -12,10 +12,14 @@
         android:roundIcon="@mipmap/logoprinting"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KonfirmasiPesana.DetailKonfirmasi"
+        <activity android:name=".LoginRegister.LoginUser"
             android:theme="@style/LoginNoTittleBar"></activity>
-        <activity android:name=".KonfirmasiPesana.KonfirmasiPembayaran"
-            android:theme="@style/LoginNoTittleBar"/>
+        <activity
+            android:name=".KonfirmasiPesana.DetailKonfirmasi"
+            android:theme="@style/LoginNoTittleBar" />
+        <activity
+            android:name=".KonfirmasiPesana.KonfirmasiPembayaran"
+            android:theme="@style/LoginNoTittleBar" />
         <activity
             android:name=".KonfirmasiPesana.KonfirmasiPesanan"
             android:theme="@style/LoginNoTittleBar" />
@@ -53,7 +57,7 @@
             android:name=".MainActivity"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".LoginRegister.LoginUser"
+            android:name=".SplashScreen"
             android:theme="@style/LoginNoTittleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

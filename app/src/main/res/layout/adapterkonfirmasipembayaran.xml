@@ -35,7 +35,7 @@
                 android:textStyle="italic"
                 android:text="#Invoice"
                 android:textColor="@color/colormerah"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/txt_jeniscetak"
@@ -49,7 +49,7 @@
                 android:textStyle="bold"
                 android:text="Jenis Cetak"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txt_tanggalpesan"
@@ -63,7 +63,7 @@
                 android:textStyle="bold"
                 android:text="Tanggal Pesan"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
 
 
@@ -77,10 +77,10 @@
                 android:layout_toRightOf="@id/image"
                 android:gravity="bottom|right"
                 android:paddingTop="15dp"
-                android:textStyle="bold"
-                android:textColor="#000"
+                android:textColor="@color/colormerah"
+                android:textStyle="bold|italic"
                 android:text="Status Produk"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
 
 

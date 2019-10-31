@@ -3,11 +3,15 @@ package com.example.ryudigitalprinting.StatusOrder;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ProgressBar;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.ryudigitalprinting.Adapter.AdapterStatusPesanan;
@@ -16,6 +20,7 @@ import com.example.ryudigitalprinting.Api.RequestInterface;
 import com.example.ryudigitalprinting.LoginRegister.LoginUser;
 import com.example.ryudigitalprinting.Model.ModelStatusPesanan;
 import com.example.ryudigitalprinting.R;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +33,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.view.View.GONE;
 import static com.example.ryudigitalprinting.BuildConfig.BASE_URL;
 
 public class StatusOrder extends AppCompatActivity {
@@ -37,6 +43,11 @@ public class StatusOrder extends AppCompatActivity {
     AdapterStatusPesanan adapterStatusPesanan;
     SharedPreferences sharedpreferences;
     String id, id_transaksi;
+
+    SwipeRefreshLayout swipeRefresh;
+
+    ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +67,28 @@ public class StatusOrder extends AppCompatActivity {
         Toast.makeText(this, "id Transaksi "+ id_transaksi, Toast.LENGTH_SHORT).show();
 */
 
+        swipeRefresh = findViewById(R.id.swipeRefresh);
+        progressBar = findViewById(R.id.progressBar);
+
+        swipeRefresh.setColorScheme(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initViews();
+                loadJSON();
+                swipeRefresh.setRefreshing(false);
+            }
+        });
+
+
+
         initViews();
         loadJSON();
+
     }
 
     private void initViews(){
@@ -79,16 +110,21 @@ public class StatusOrder extends AppCompatActivity {
                         .writeTimeout(30, TimeUnit.SECONDS)
                         .build())
                 .build();
+        progressBar.setVisibility(android.view.View.VISIBLE);
         RequestInterface request = retrofit.create(RequestInterface.class);
         Call<JSONResponse> call = request.getStatuspesanan(id);
         call.enqueue(new Callback<JSONResponse>() {
             @Override
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
                 JSONResponse jsonResponse = response.body();
+                progressBar.setVisibility(android.view.View.INVISIBLE);
+                swipeRefresh.setRefreshing(false);
                 mArrayList = new ArrayList<>(Arrays.asList(jsonResponse.getStatusPesanan()));
                 //mAdapter = new AdapterPencarianMenu(mArrayList);
+
                 adapterStatusPesanan = new AdapterStatusPesanan(getApplicationContext(),mArrayList);
                 liststatuspesanan.setAdapter(adapterStatusPesanan);
+
             }
 
             @Override
@@ -97,4 +133,6 @@ public class StatusOrder extends AppCompatActivity {
             }
         });
     }
+
+
 }

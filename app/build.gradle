@@ -61,4 +61,7 @@ dependencies {
 
     // Facebook shimmer effect dependency
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    // SplashScreen
+    implementation 'com.wang.avi:library:2.1.3'
 }

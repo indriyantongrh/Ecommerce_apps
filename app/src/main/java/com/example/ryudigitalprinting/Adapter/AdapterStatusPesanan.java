@@ -120,30 +120,7 @@ public class AdapterStatusPesanan extends RecyclerView.Adapter<AdapterStatusPesa
 
 
 
-            view.setOnClickListener(this);
 
-            txt_invoice.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Intent detail = new Intent(view.getContext(), DetailStatusPesanan.class);
-
-/*                    detail.putExtra("id_pelamarmasuk", txt_id_pelamarmasuk.getText());
-                    detail.putExtra("id_user", txt_id_user.getText());
-                    detail.putExtra("id_perusahaan", txt_id_perusahaan.getText());
-                    detail.putExtra("nama_perusahaan", txt_nama_perusahaan.getText());
-                    detail.putExtra("id_lowongankerja", txt_id_lowongan.getText());
-                    detail.putExtra("judul_lowongan", txt_judul_lowongan.getText());
-                    detail.putExtra("deskripsi", txt_deskripsi.getText());
-                    detail.putExtra("gaji", txt_gaji.getText());
-                    detail.putExtra("deadline", txt_deadline.getText());
-                    detail.putExtra("kategori", txt_kategori.getText());
-                    detail.putExtra("status_pelamar", txt_statuspelamar.getText());
-                    detail.putExtra("keterangan", txt_keterangan.getText());*/
-
-                    view.getContext().startActivity(detail);
-                }
-            });
         }
 
         @Override
