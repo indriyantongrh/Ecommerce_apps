@@ -112,7 +112,7 @@ public class CetakPamflet extends AppCompatActivity implements View.OnClickListe
 
         sharedpreferences = getSharedPreferences(LoginUser.my_shared_preferences, Context.MODE_PRIVATE);
         id = sharedpreferences.getString("id", "0");
-        Toast.makeText(this, "ini id ke-"+ id, Toast.LENGTH_SHORT).show();
+       /// Toast.makeText(this, "ini id ke-"+ id, Toast.LENGTH_SHORT).show();
 
         ambilProfilUser();
 

@@ -69,7 +69,7 @@ public class OrderSukses extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(LoginUser.my_shared_preferences, Context.MODE_PRIVATE);
         id = sharedpreferences.getString("id", "0");
-        Toast.makeText(this, "ini id ke-" + id, Toast.LENGTH_SHORT).show();
+     ///   Toast.makeText(this, "ini id ke-" + id, Toast.LENGTH_SHORT).show();
 
        /// id_transaksi = sharedpreferences.getString("id_transaksi", "0");
         ///Toast.makeText(this, "ini id tansaksi ke-" + id_transaksi, Toast.LENGTH_SHORT).show();
