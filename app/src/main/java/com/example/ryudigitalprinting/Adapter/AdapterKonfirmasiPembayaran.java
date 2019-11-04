@@ -46,7 +46,7 @@ public class AdapterKonfirmasiPembayaran extends RecyclerView.Adapter<AdapterKon
         viewHolder.txt_namalengkap.setText(mFilteredList.get(i).getNamalengkap());
         viewHolder.txt_invoice.setText(mFilteredList.get(i).getNomor_invoice());
         viewHolder.txt_jeniscetak.setText(mFilteredList.get(i).getJenis_cetak());
-        viewHolder.txt_statuspesanan.setText((mFilteredList.get(i).getStatus_pesanan()));
+       /// viewHolder.txt_statuspesanan.setText((mFilteredList.get(i).getStatus_pesanan()));
         viewHolder.txt_tanggalpesan.setText(mFilteredList.get(i).getTanggal_pesan());  //untuk mengirim url gambar ke berbagai activity
         viewHolder.txt_lebar.setText(mFilteredList.get(i).getLebar());
         viewHolder.txt_panjang.setText(mFilteredList.get(i).getPanjang());
@@ -54,7 +54,7 @@ public class AdapterKonfirmasiPembayaran extends RecyclerView.Adapter<AdapterKon
         viewHolder.txt_jumlahpesanan.setText(mFilteredList.get(i).getJumlah_pesanan());
         ///  viewHolder.txt_gambar.setText(mFilteredList.get(i).getGambar());
         viewHolder.txt_jumlahharga.setText(mFilteredList.get(i).getJumlah_harga());
-        viewHolder.txt_statustransfer.setText(mFilteredList.get(i).getStatus_transfer());
+        viewHolder.txt_statuspesanan.setText(mFilteredList.get(i).getStatus_transfer());
         viewHolder.txt_id_user.setText(mFilteredList.get(i).getId());
 
     }
