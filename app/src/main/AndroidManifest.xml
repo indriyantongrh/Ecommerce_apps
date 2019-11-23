@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ryudigitalprinting">
+    package="com.PersonalLancer.ryudigitalprinting">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Utility.AppController"
+        android:name="com.PersonalLancer.ryudigitalprinting.Utility.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/logoprinting"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logoprinting"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginRegister.LoginUser"
+        <activity android:name="com.PersonalLancer.ryudigitalprinting.LoginRegister.LoginUser"
             android:theme="@style/LoginNoTittleBar"></activity>
         <activity
-            android:name=".KonfirmasiPesana.DetailKonfirmasi"
+            android:name="com.PersonalLancer.ryudigitalprinting.KonfirmasiPesana.DetailKonfirmasi"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".KonfirmasiPesana.KonfirmasiPembayaran"
+            android:name="com.PersonalLancer.ryudigitalprinting.KonfirmasiPesana.KonfirmasiPembayaran"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".KonfirmasiPesana.KonfirmasiPesanan"
+            android:name="com.PersonalLancer.ryudigitalprinting.KonfirmasiPesana.KonfirmasiPesanan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".StatusOrder.DetailStatusPesanan"
+            android:name="com.PersonalLancer.ryudigitalprinting.StatusOrder.DetailStatusPesanan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".StatusOrder.StatusOrder"
+            android:name="com.PersonalLancer.ryudigitalprinting.StatusOrder.StatusOrder"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".EditProfile"
+            android:name="com.PersonalLancer.ryudigitalprinting.EditProfile"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakUndanganPernikahan"
+            android:name="com.PersonalLancer.ryudigitalprinting.CetakMMT.CetakUndanganPernikahan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakPamflet"
+            android:name="com.PersonalLancer.ryudigitalprinting.CetakMMT.CetakPamflet"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakKartuNama"
+            android:name="com.PersonalLancer.ryudigitalprinting.CetakMMT.CetakKartuNama"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.OrderSukses"
+            android:name="com.PersonalLancer.ryudigitalprinting.CetakMMT.OrderSukses"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakMMT"
+            android:name="com.PersonalLancer.ryudigitalprinting.CetakMMT.CetakMMT"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".ListCetak.ListCetak"
+            android:name="com.PersonalLancer.ryudigitalprinting.ListCetak.ListCetak"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".LoginRegister.RegisterUser"
+            android:name="com.PersonalLancer.ryudigitalprinting.LoginRegister.RegisterUser"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.PersonalLancer.ryudigitalprinting.MainActivity"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.PersonalLancer.ryudigitalprinting.SplashScreen"
             android:theme="@style/LoginNoTittleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
