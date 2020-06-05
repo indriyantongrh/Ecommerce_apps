@@ -133,8 +133,6 @@ public class CetakUndanganPernikahan extends AppCompatActivity implements View.O
 
                     Locale localeID = new Locale("in", "ID");
                     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-
-
                     double jumlahorder = Double.parseDouble(txtjumlahorder.getText().toString());
                     double hitungan = jumlahorder * 2400;
 

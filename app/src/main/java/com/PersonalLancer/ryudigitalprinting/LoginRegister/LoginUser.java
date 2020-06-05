@@ -207,12 +207,6 @@ public class LoginUser extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
-
-
-
-
-
-
                 } else {
                     Toast.makeText(LoginUser.this, message, Toast.LENGTH_SHORT).show();
                 }

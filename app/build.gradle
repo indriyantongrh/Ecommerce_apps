@@ -15,10 +15,10 @@ android {
         applicationId "com.PersonalLancer.ryudigitalprinting"
         minSdkVersion 18
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", "\"http://gudangandroid.universedeveloper.com/percetakan/\""
+        buildConfigField "String", "BASE_URL", "\"https://api.pasarburung.id/percetakan/\""
         signingConfig signingConfigs.config
     }
     buildTypes {
