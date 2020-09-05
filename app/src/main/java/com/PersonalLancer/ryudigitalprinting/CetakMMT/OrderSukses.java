@@ -46,8 +46,8 @@ public class OrderSukses extends AppCompatActivity {
     private ClipboardManager myClipboard;
     private ClipData myClip;
 
-    private static final String url_ambil_id_transaksi = "http://universedeveloper.com/gudangandroid/percetakan/cektransaksiterakhir.php";
-    public static final String BASE_URL = "http://universedeveloper.com/gudangandroid/percetakan/";
+    private static final String url_ambil_id_transaksi = "http://api.pasarburung.id/percetakan/cektransaksiterakhir.php";
+    public static final String BASE_URL = "http://api.pasarburung.id//percetakan/";
 
     TextView txt_nomorinvoice, txt_totalharga;
     String id, id_transaksi;
