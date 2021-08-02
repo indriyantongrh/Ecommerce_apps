@@ -29,7 +29,7 @@ public class ubahPassword extends AppCompatActivity {
     String id;
     SharedPreferences sharedpreferences;
     ProgressDialog pDialog;
-    EditText txtPasswordlama, txtPasswordbaru, txtComfirmpassword;
+    EditText txtPasswordbaru ;
     CardView btnupdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ubahPassword extends AppCompatActivity {
         Toast.makeText(ubahPassword.this, "id anda" + id, Toast.LENGTH_SHORT).show();
 
 
-        txtPasswordlama = findViewById(R.id.txtPasswordlama);
+
         txtPasswordbaru = findViewById(R.id.txtPasswordbaru);
 //        txtComfirmpassword = findViewById(R.id.txtComfirmpassword);
         btnupdate = findViewById(R.id.btnupdate);
@@ -67,8 +67,6 @@ public class ubahPassword extends AppCompatActivity {
         //mengambil data dari edittext
 
         String password = txtPasswordbaru.getText().toString();
-        String passwordbaru = txtPasswordbaru.getText().toString();
-
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(50, TimeUnit.SECONDS)
