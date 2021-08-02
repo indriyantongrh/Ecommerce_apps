@@ -7,9 +7,9 @@
     <application
         android:name="com.PersonalLancer.ecommerceapps.Utility.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/logoprinting"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logoprinting"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.PersonalLancer.ecommerceapps.detailProduct"></activity>

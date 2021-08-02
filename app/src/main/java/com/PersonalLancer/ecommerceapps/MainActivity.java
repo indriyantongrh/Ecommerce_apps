@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
 
         swipeRefresh = findViewById(R.id.swipeRefresh);
-        progressBar = findViewById(R.id.progressBar);
+
 
         swipeRefresh.setColorScheme(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
