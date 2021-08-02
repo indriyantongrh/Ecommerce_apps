@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".detailProduct">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="55dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/imageproducr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="#fff"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+                    android:id="@+id/Relativeimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/no_image" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_name_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Relativeimage"
+                    android:ellipsize="end"
+
+                    android:maxLines="3"
+                    android:text="Nama Product"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#636363"
+                    android:textSize="19sp"
+                    android:layout_marginStart="3dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_price_sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_name_product"
+                    android:layout_marginStart="6dp"
+
+                    android:text="Harga Diskon"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txt_id"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeinformationproduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:background="#fff"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/text_informastion_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+
+                    android:text="Informasi Produk"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/text_berat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_informastion_product"
+                    android:text="Berat"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txt_weight_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_informastion_product"
+                    android:layout_toEndOf="@+id/text_berat"
+                    android:layout_toRightOf="@+id/text_berat"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+                    android:text="null"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/text_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_berat"
+                    android:text="Kondisi"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txt_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_weight_value"
+                    android:layout_toEndOf="@+id/text_condition"
+                    android:layout_toRightOf="@+id/text_condition"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+                    android:text="null"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/text_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_condition"
+                    android:text="Stok Barang"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txt_stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_condition"
+                    android:layout_toEndOf="@+id/text_stock"
+                    android:layout_toRightOf="@+id/text_stock"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12sp"
+                    android:gravity="right"
+                    android:text="null"
+
+                    android:textColor="#636363"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_below="@+id/text_stock"
+
+                    android:text="Deskripsi Produk"
+                    android:textSize="16dp"
+                    android:textColor="#636363"
+                    />
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/text_description"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="6dp"-->
+                <!--                    android:layout_below="@+id/text_stock"-->
+                <!--                    android:fontFamily="@font/jipitha"-->
+                <!--                    android:text="Deskripsi Produk"-->
+                <!--                    android:textSize="28sp"-->
+                <!--                    android:textColor="#636363"-->
+                <!--                    android:textStyle="bold" />-->
+
+                <TextView
+                    android:id="@+id/txt_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_description"
+                    android:layout_marginStart="6dp"
+
+                    android:text="Isi Deskripsi Produk"
+                    android:textSize="14sp"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeinformationmerchant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:paddingBottom="9dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/text_Information_Store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+
+                    android:text="Informasi Merchant"
+                    android:textSize="16dp"
+                    android:textColor="#636363"
+                    />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imagemerchant"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:focusable="true"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="left"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_below="@+id/text_Information_Store"
+                    app:civ_border_color="#FFFFFFFF"
+                    app:civ_border_width="2dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txt_name_merchant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/imagemerchant"
+                    android:layout_toRightOf="@+id/imagemerchant"
+                    android:text="Name Merchant"
+                    android:textColor="@color/colormerah"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/text_Information_Store"
+
+                    android:textSize="14sp"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentTop="true" />
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <Button
+            android:id="@+id/btnBelisekarang"
+            android:layout_width="match_parent"
+            android:text="Beli Sekarang"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+
+            android:textSize="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorkuning"
+            ></Button>
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

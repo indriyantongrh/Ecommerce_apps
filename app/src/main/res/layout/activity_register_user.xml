@@ -50,7 +50,6 @@
             android:layout_height="150dp"
             android:paddingHorizontal="10dp"
             android:paddingTop="4dp"
-            android:src="@drawable/logoprinting"
             android:layout_marginBottom="0dp" />
 
         <androidx.cardview.widget.CardView

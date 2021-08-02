@@ -14,7 +14,7 @@
         android:layout_height="150dp"
         android:paddingHorizontal="10dp"
         android:paddingTop="45dp"
-        android:src="@drawable/logoprinting"
+
         android:layout_marginBottom="15dp" />
 
     <androidx.cardview.widget.CardView
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Mulai Cetak yuk!"
+                android:text="Silahkan Login"
                 android:textStyle="bold"
                 android:layout_below="@+id/image12"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -149,8 +149,9 @@
         android:layout_below="@+id/btnlogin"
         android:gravity="center"
         android:textColor="#000"
-        android:textSize="17dp"
-        android:text="Daftar Member disini"/>
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Registrasi disini"/>
 
 
 

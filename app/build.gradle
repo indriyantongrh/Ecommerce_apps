@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            storeFile file('C:\\Users\\Masiin-PC\\AndroidStudioProjects\\RyuDigitalPrinting\\app\\release\\app-release.apk')
+//            storeFile file('C:\\Users\\Masiin-PC\\AndroidStudioProjects\\RyuDigitalPrinting\\app\\release\\app-release.apk')
             storePassword 'asolole123'
             keyAlias = 'PersonalLancer'
             keyPassword 'asolole123'
@@ -18,7 +18,7 @@ android {
         versionCode 2
         versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "BASE_URL", "\"https://api.pasarburung.id/percetakan/\""
+        buildConfigField "String", "BASE_URL", "\"https://uts.jualrumahsemarang.com/ecommers/\""
         signingConfig signingConfigs.config
     }
     buildTypes {
@@ -44,6 +44,7 @@ dependencies {
     ////   implementation 'me.relex:circleindicator:1.2.2@aar'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
     implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 

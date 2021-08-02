@@ -1,6 +1,7 @@
 package com.PersonalLancer.ryudigitalprinting.Api;
 
 
+import com.PersonalLancer.ryudigitalprinting.Model.ListproductItem;
 import com.PersonalLancer.ryudigitalprinting.Model.ModelProfilUser;
 import com.PersonalLancer.ryudigitalprinting.Model.ModelStatusPesanan;
 import com.PersonalLancer.ryudigitalprinting.Model.ModelTransaksiUser;
@@ -24,6 +25,12 @@ public class JSONResponse {
 
     public ModelStatusPesanan[] getStatusPesanan() {
         return listpesanan;
+    }
+
+    private ListproductItem[] listproduct;
+
+    public ListproductItem[] getListproduct() {
+        return listproduct;
     }
 
 /*    private ModelProfilUser[] user;

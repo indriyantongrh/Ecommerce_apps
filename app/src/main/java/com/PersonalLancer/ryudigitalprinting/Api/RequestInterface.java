@@ -2,6 +2,8 @@ package com.PersonalLancer.ryudigitalprinting.Api;
 
 
 
+import com.PersonalLancer.ryudigitalprinting.Model.ModelProduct;
+
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -36,11 +38,25 @@ public interface RequestInterface {
     @GET("detailuser.php")
     Call<JSONResponse> getProfilUser(@Query("id") String id);
 
+    @FormUrlEncoded
+    @POST("updateprofile.php")
+    Call<SuccessMessage> updateUsers(@Field("id") String id,
+                                    @Field("namalengkap") String namalengkap,
+                                    @Field("email") String email,
+                                    @Field("nomortelepon") String nomortelepon);
+
+    @FormUrlEncoded
+    @POST("updatepassword.php")
+    Call<SuccessMessage> updatePassword(@Field("id") String id,
+                                     @Field("password") String password);
 
 
     //detail transaksi
     @GET("detailtransaksi.php")
     Call<JSONResponse> getTransaksi(@Query("id") String id);
+
+    @GET("listproduct.php")
+    Call<JSONResponse> getProduct();
 
     @GET("liststatuspesanan.php")
     Call<JSONResponse> getStatuspesanan(@Query("id") String id);
