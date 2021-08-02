@@ -64,11 +64,7 @@ public class SplashScreen extends AppCompatActivity {
 //        avi.setIndicator("PacmanIndicator");
 
 
-//        //pembuatan animasi Bounce (atas bawahh)
-//        new BounceAnimation(lv_loading)
-//                .setBounceDistance(50)
-//                .setDuration(3000)
-//                .animate();
+
 
         //membuat sebuah proses yang ter delay
         new Handler().postDelayed(new Runnable() {
