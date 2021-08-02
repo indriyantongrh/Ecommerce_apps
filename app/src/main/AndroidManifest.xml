@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.PersonalLancer.ryudigitalprinting">
+    package="com.PersonalLancer.ecommerceapps">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Utility.AppController"
+        android:name="com.PersonalLancer.ecommerceapps.Utility.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/logoprinting"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logoprinting"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".detailProduct"></activity>
+        <activity android:name="com.PersonalLancer.ecommerceapps.detailProduct"></activity>
         <activity
-            android:name=".ubahPassword"
+            android:name="com.PersonalLancer.ecommerceapps.ubahPassword"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".LoginRegister.LoginUser"
+            android:name="com.PersonalLancer.ecommerceapps.LoginRegister.LoginUser"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".KonfirmasiPesana.DetailKonfirmasi"
+            android:name="com.PersonalLancer.ecommerceapps.KonfirmasiPesana.DetailKonfirmasi"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".KonfirmasiPesana.KonfirmasiPembayaran"
+            android:name="com.PersonalLancer.ecommerceapps.KonfirmasiPesana.KonfirmasiPembayaran"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".KonfirmasiPesana.KonfirmasiPesanan"
+            android:name="com.PersonalLancer.ecommerceapps.KonfirmasiPesana.KonfirmasiPesanan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".StatusOrder.DetailStatusPesanan"
+            android:name="com.PersonalLancer.ecommerceapps.StatusOrder.DetailStatusPesanan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".StatusOrder.StatusOrder"
+            android:name="com.PersonalLancer.ecommerceapps.StatusOrder.StatusOrder"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".EditProfile"
+            android:name="com.PersonalLancer.ecommerceapps.EditProfile"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakUndanganPernikahan"
+            android:name="com.PersonalLancer.ecommerceapps.CetakMMT.CetakUndanganPernikahan"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakPamflet"
+            android:name="com.PersonalLancer.ecommerceapps.CetakMMT.CetakPamflet"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakKartuNama"
+            android:name="com.PersonalLancer.ecommerceapps.CetakMMT.CetakKartuNama"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.OrderSukses"
+            android:name="com.PersonalLancer.ecommerceapps.CetakMMT.OrderSukses"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".CetakMMT.CetakMMT"
+            android:name="com.PersonalLancer.ecommerceapps.CetakMMT.CetakMMT"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".ListCetak.ListCetak"
+            android:name="com.PersonalLancer.ecommerceapps.ListCetak.ListCetak"
             android:theme="@style/LoginNoTittleBar" />
         <activity
-            android:name=".LoginRegister.RegisterUser"
+            android:name="com.PersonalLancer.ecommerceapps.LoginRegister.RegisterUser"
             android:theme="@style/LoginNoTittleBar" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.PersonalLancer.ecommerceapps.MainActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.PersonalLancer.ecommerceapps.SplashScreen"
             android:theme="@style/LoginNoTittleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
