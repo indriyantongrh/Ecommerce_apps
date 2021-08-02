@@ -19,9 +19,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-/**
- * Create by Indriyantongrh on 8/1/21
- */
 public class adapterProduct extends  RecyclerView.Adapter<adapterProduct.ViewHolder> {
 
     private ArrayList<ListproductItem> mArrayList;
